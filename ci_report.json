@@ -1,0 +1,698 @@
+{
+  "ci_version": "0.2",
+  "timestamp_utc": "2026-01-09T01:21:43.488767+00:00",
+  "counts": {
+    "N_windows": 5,
+    "N_valid": 3
+  },
+  "metrics": {
+    "presence": 0.6,
+    "stability": 1.0,
+    "reliability": 0.244,
+    "ci_confidence": 0.147
+  },
+  "interpretation": {
+    "gating_threshold": 0.7,
+    "gating_decision": "BLOCKED",
+    "ci_tier": {
+      "name": "Exploratory",
+      "code": "exploratory",
+      "icon": "\ud83d\udd34",
+      "range": [
+        0.0,
+        0.3
+      ]
+    },
+    "explanation": "Limited by presence=0.600 (3/5 windows valid); reliability=0.244 (median \u0394 vs null)."
+  },
+  "windows": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 500,
+      "valid": true,
+      "tau_star": 3.0,
+      "corr": 0.519909,
+      "delta": 0.290894,
+      "validity_reason": "delta",
+      "tile_id": "r00_c00"
+    },
+    {
+      "index": 1,
+      "start": 250,
+      "end": 750,
+      "valid": false,
+      "tau_star": null,
+      "corr": null,
+      "delta": null,
+      "validity_reason": "weak_vs_null",
+      "tile_id": "r00_c01"
+    },
+    {
+      "index": 2,
+      "start": 1000,
+      "end": 1500,
+      "valid": false,
+      "tau_star": null,
+      "corr": null,
+      "delta": null,
+      "validity_reason": "weak_vs_null",
+      "tile_id": "r00_c02"
+    },
+    {
+      "index": 3,
+      "start": 1250,
+      "end": 1750,
+      "valid": true,
+      "tau_star": 3.0,
+      "corr": 0.434343,
+      "delta": 0.244345,
+      "validity_reason": "delta",
+      "tile_id": "r00_c03"
+    },
+    {
+      "index": 4,
+      "start": 1500,
+      "end": 2000,
+      "valid": true,
+      "tau_star": 3.0,
+      "corr": 0.417942,
+      "delta": 0.231056,
+      "validity_reason": "delta",
+      "tile_id": "r00_c04"
+    }
+  ],
+  "diagnostics": {
+    "tau_mad": 0.0
+  },
+  "channels": {
+    "hp": [
+      {
+        "index": 0,
+        "start": 0,
+        "end": 500,
+        "valid": true,
+        "tau_star": 3.0,
+        "corr": 0.519909,
+        "delta": 0.290894,
+        "validity_reason": "delta",
+        "tile_id": "r00_c00"
+      },
+      {
+        "index": 1,
+        "start": 250,
+        "end": 750,
+        "valid": false,
+        "tau_star": null,
+        "corr": null,
+        "delta": null,
+        "validity_reason": "weak_vs_null",
+        "tile_id": "r00_c01"
+      },
+      {
+        "index": 2,
+        "start": 1000,
+        "end": 1500,
+        "valid": false,
+        "tau_star": null,
+        "corr": null,
+        "delta": null,
+        "validity_reason": "weak_vs_null",
+        "tile_id": "r00_c02"
+      },
+      {
+        "index": 3,
+        "start": 1250,
+        "end": 1750,
+        "valid": true,
+        "tau_star": 3.0,
+        "corr": 0.434343,
+        "delta": 0.244345,
+        "validity_reason": "delta",
+        "tile_id": "r00_c03"
+      },
+      {
+        "index": 4,
+        "start": 1500,
+        "end": 2000,
+        "valid": true,
+        "tau_star": 3.0,
+        "corr": 0.417942,
+        "delta": 0.231056,
+        "validity_reason": "delta",
+        "tile_id": "r00_c04"
+      }
+    ],
+    "raw": []
+  },
+  "primary_channel": "hp",
+  "spatial": {
+    "roi": {
+      "name": "CONUS",
+      "bounds": [
+        24.0,
+        -125.0,
+        50.0,
+        -66.0
+      ]
+    },
+    "grid": {
+      "rows": 3,
+      "cols": 5
+    },
+    "tiles": [
+      {
+        "id": "r00_c00",
+        "row": 0,
+        "col": 0,
+        "bbox": {
+          "lat_min": 24.0,
+          "lat_max": 32.666667,
+          "lon_min": -125.0,
+          "lon_max": -113.2
+        },
+        "counts": {
+          "N_windows": 1,
+          "N_valid": 1
+        },
+        "metrics": {
+          "presence": 1.0,
+          "stability": 1.0,
+          "reliability": 0.291,
+          "ci_confidence": 0.291
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by reliability=0.291 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r00_c01",
+        "row": 0,
+        "col": 1,
+        "bbox": {
+          "lat_min": 24.0,
+          "lat_max": 32.666667,
+          "lon_min": -113.2,
+          "lon_max": -101.4
+        },
+        "counts": {
+          "N_windows": 1,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/1 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r00_c02",
+        "row": 0,
+        "col": 2,
+        "bbox": {
+          "lat_min": 24.0,
+          "lat_max": 32.666667,
+          "lon_min": -101.4,
+          "lon_max": -89.6
+        },
+        "counts": {
+          "N_windows": 1,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/1 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r00_c03",
+        "row": 0,
+        "col": 3,
+        "bbox": {
+          "lat_min": 24.0,
+          "lat_max": 32.666667,
+          "lon_min": -89.6,
+          "lon_max": -77.8
+        },
+        "counts": {
+          "N_windows": 1,
+          "N_valid": 1
+        },
+        "metrics": {
+          "presence": 1.0,
+          "stability": 1.0,
+          "reliability": 0.244,
+          "ci_confidence": 0.244
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by reliability=0.244 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r00_c04",
+        "row": 0,
+        "col": 4,
+        "bbox": {
+          "lat_min": 24.0,
+          "lat_max": 32.666667,
+          "lon_min": -77.8,
+          "lon_max": -66.0
+        },
+        "counts": {
+          "N_windows": 1,
+          "N_valid": 1
+        },
+        "metrics": {
+          "presence": 1.0,
+          "stability": 1.0,
+          "reliability": 0.231,
+          "ci_confidence": 0.231
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by reliability=0.231 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r01_c00",
+        "row": 1,
+        "col": 0,
+        "bbox": {
+          "lat_min": 32.666667,
+          "lat_max": 41.333333,
+          "lon_min": -125.0,
+          "lon_max": -113.2
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r01_c01",
+        "row": 1,
+        "col": 1,
+        "bbox": {
+          "lat_min": 32.666667,
+          "lat_max": 41.333333,
+          "lon_min": -113.2,
+          "lon_max": -101.4
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r01_c02",
+        "row": 1,
+        "col": 2,
+        "bbox": {
+          "lat_min": 32.666667,
+          "lat_max": 41.333333,
+          "lon_min": -101.4,
+          "lon_max": -89.6
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r01_c03",
+        "row": 1,
+        "col": 3,
+        "bbox": {
+          "lat_min": 32.666667,
+          "lat_max": 41.333333,
+          "lon_min": -89.6,
+          "lon_max": -77.8
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r01_c04",
+        "row": 1,
+        "col": 4,
+        "bbox": {
+          "lat_min": 32.666667,
+          "lat_max": 41.333333,
+          "lon_min": -77.8,
+          "lon_max": -66.0
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r02_c00",
+        "row": 2,
+        "col": 0,
+        "bbox": {
+          "lat_min": 41.333333,
+          "lat_max": 50.0,
+          "lon_min": -125.0,
+          "lon_max": -113.2
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r02_c01",
+        "row": 2,
+        "col": 1,
+        "bbox": {
+          "lat_min": 41.333333,
+          "lat_max": 50.0,
+          "lon_min": -113.2,
+          "lon_max": -101.4
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r02_c02",
+        "row": 2,
+        "col": 2,
+        "bbox": {
+          "lat_min": 41.333333,
+          "lat_max": 50.0,
+          "lon_min": -101.4,
+          "lon_max": -89.6
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r02_c03",
+        "row": 2,
+        "col": 3,
+        "bbox": {
+          "lat_min": 41.333333,
+          "lat_max": 50.0,
+          "lon_min": -89.6,
+          "lon_max": -77.8
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      },
+      {
+        "id": "r02_c04",
+        "row": 2,
+        "col": 4,
+        "bbox": {
+          "lat_min": 41.333333,
+          "lat_max": 50.0,
+          "lon_min": -77.8,
+          "lon_max": -66.0
+        },
+        "counts": {
+          "N_windows": 0,
+          "N_valid": 0
+        },
+        "metrics": {
+          "presence": 0.0,
+          "stability": 0.0,
+          "reliability": 0.0,
+          "ci_confidence": 0.0
+        },
+        "interpretation": {
+          "gating_threshold": 0.7,
+          "gating_decision": "BLOCKED",
+          "ci_tier": {
+            "name": "Exploratory",
+            "code": "exploratory",
+            "icon": "\ud83d\udd34",
+            "range": [
+              0.0,
+              0.3
+            ]
+          },
+          "explanation": "Limited by presence=0.000 (0/0 windows valid); stability=0.000 (\u03c4* dispersion); reliability=0.000 (median \u0394 vs null)."
+        }
+      }
+    ]
+  },
+  "window_to_tile": {
+    "0": "r00_c00",
+    "1": "r00_c01",
+    "2": "r00_c02",
+    "3": "r00_c03",
+    "4": "r00_c04"
+  }
+}
