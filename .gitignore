@@ -6,6 +6,9 @@ __pycache__/
 # Data
 ci_report.json
 
+# CI runtime output (local only)
+ci_report.json
+
 # C extensions
 *.so
 
