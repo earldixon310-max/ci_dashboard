@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "version": "0.1",
+    "generated_utc": "2026-01-01T00:00:00Z",
+    "notes": "Example CI report (synthetic data)"
+  },
+
+  "metrics": {
+    "ci_confidence": 0.25,
+    "presence": 0.60,
+    "stability": 1.00,
+    "reliability": 0.30
+  },
+
+  "interpretation": {
+    "explanation": "Example output only. Values are synthetic and not operational."
+  },
+
+  "windows": [
+    {
+      "index": 0,
+      "start": "T0",
+      "end": "T1",
+      "valid": true,
+      "tau_star": 5,
+      "corr": 0.42,
+      "delta": 0.24,
+      "validity_reason": "synthetic",
+      "tile_id": "tile_A"
+    },
+    {
+      "index": 1,
+      "start": "T1",
+      "end": "T2",
+      "valid": false,
+      "tau_star": null,
+      "corr": null,
+      "delta": null,
+      "validity_reason": "insufficient signal",
+      "tile_id": "tile_A"
+    }
+  ],
+
+  "tiles": [
+    {
+      "id": "tile_A",
+      "metrics": {
+        "ci_confidence": 0.28,
+        "presence": 0.66,
+        "stability": 1.00,
+        "reliability": 0.35
+      }
+    },
+    {
+      "id": "tile_B",
+      "metrics": {
+        "ci_confidence": 0.18,
+        "presence": 0.50,
+        "stability": 1.00,
+        "reliability": 0.22
+      }
+    }
+  ],
+"plots": {
+  "corridors": {
+    "raw_dh": {
+      "lags": [-2, -1, 0, 1, 2],
+      "corr": [0.1, 0.2, 0.3, 0.25, 0.2],
+      "tau_star": 0,
+      "null_95": 0.4
+    }
+  }
+}
+
+}
