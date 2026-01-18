@@ -158,10 +158,10 @@ with left:
             st.warning("CI is Exploratory. External hazard activity is elevated — interpret correlations cautiously.")
         else:
             st.info("CI is Exploratory. Use for discovery only — do not treat as operational guidance.")
-elif tier_code == "conditional":
+        elif tier_code == "conditional":
     if alerts_state["hazard_elevated"]:
         st.info("CI is Conditional. External hazard activity is elevated — treat CI as supportive context, not a trigger.")
-else:
+        else:
     # admissible/unknown
     if alerts_state["hazard_elevated"]:
         st.success("CI is strong. External hazard activity is elevated — CI may help prioritize monitoring focus.")
