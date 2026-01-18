@@ -4,12 +4,22 @@ import json
 from pathlib import Path
 from typing import Any, Dict
 
-def load_report(path: str | Path = "ci_report.json") -> Dict[str, Any]:
-    p = Path(path)
+from pathlib import Path
+import json
+
+def load_report(primary="ci_report.json", fallback="ci_report.example.json"):
+    p = Path(primary)
     if not p.exists():
-        raise FileNotFoundError(f"{p} not found.")
+        p = Path(fallback)
+
+    if not p.exists():
+        raise FileNotFoundError(
+            f"CI report not found. Expected '{primary}' (local) or '{fallback}' (repo)."
+        )
+
     with p.open("r", encoding="utf-8") as f:
-        return json.load(f)
+        return json.load(f), str(p)
+
 
 def available_tiles(report: Dict[str, Any]) -> list[dict]:
     spatial = report.get("spatial") or {}
@@ -51,3 +61,4 @@ def select_bundle(report: Dict[str, Any], tile_id: str | None = None) -> Dict[st
             }
 
     return global_bundle
+
