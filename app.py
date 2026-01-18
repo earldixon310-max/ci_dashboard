@@ -23,7 +23,7 @@ st.caption("Operator view — deterministic CI metrics (no manual tuning).")
 
 # Load report
 try:
-    report = load_report("ci_report.json")
+    report = load_report("ci_report.example.json")
 except Exception as e:
     st.error(f"Failed to load ci_report.json: {e}")
     st.stop()
