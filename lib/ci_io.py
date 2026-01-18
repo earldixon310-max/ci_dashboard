@@ -21,10 +21,32 @@ def load_report(primary="ci_report.json", fallback="ci_report.example.json"):
         return json.load(f), str(p)
 
 
-def available_tiles(report: Dict[str, Any]) -> list[dict]:
+def available_tiles(report):
+    """
+    Return list of tile dicts if spatial tiles exist, else [].
+    Supports:
+      report["spatial"]["tiles"] = {tile_id: {...}, ...}
+      report["spatial"]["tiles"] = [{ "id": "...", ...}, ...]
+    """
     spatial = report.get("spatial") or {}
-    tiles = spatial.get("tiles") or []
-    return [t for t in tiles if isinstance(t, dict) and t.get("id")]
+    tiles = spatial.get("tiles")
+    if not tiles:
+        return []
+
+    if isinstance(tiles, dict):
+        out = []
+        for tid, bundle in tiles.items():
+            if isinstance(bundle, dict):
+                b = dict(bundle)
+                b.setdefault("id", tid)
+                out.append(b)
+        return out
+
+    if isinstance(tiles, list):
+        return [t for t in tiles if isinstance(t, dict) and "id" in t]
+
+    return []
+
 
 def select_bundle(report: Dict[str, Any], tile_id: str | None = None) -> Dict[str, Any]:
     """
@@ -61,4 +83,5 @@ def select_bundle(report: Dict[str, Any], tile_id: str | None = None) -> Dict[st
             }
 
     return global_bundle
+
 
