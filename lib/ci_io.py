@@ -7,7 +7,14 @@ from typing import Any, Dict
 from pathlib import Path
 import json
 
+from pathlib import Path
+import json
+
 def load_report(primary="ci_report.json", fallback="ci_report.example.json"):
+    """
+    Load a CI report JSON and return ONLY the parsed dict.
+    Prefers `primary` if it exists, else falls back to `fallback`.
+    """
     p = Path(primary)
     if not p.exists():
         p = Path(fallback)
@@ -18,7 +25,12 @@ def load_report(primary="ci_report.json", fallback="ci_report.example.json"):
         )
 
     with p.open("r", encoding="utf-8") as f:
-        return json.load(f), str(p)
+        data = json.load(f)
+
+    if not isinstance(data, dict):
+        raise TypeError(f"CI report must be a JSON object (dict), got {type(data)}")
+
+    return data
 
 
 def available_tiles(report):
@@ -83,5 +95,6 @@ def select_bundle(report: Dict[str, Any], tile_id: str | None = None) -> Dict[st
             }
 
     return global_bundle
+
 
 
