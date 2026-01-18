@@ -25,7 +25,7 @@ st.caption("Operator view — deterministic CI metrics (no manual tuning).")
 try:
     report = load_report("ci_report.example.json")
 except Exception as e:
-    st.error(f"Failed to load ci_report.json: {e}")
+    st.error(f"Failed to load {Path('ci_report.example.json').name}: {e}")
     st.stop()
 
 # Scope picker
