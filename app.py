@@ -154,10 +154,10 @@ with left:
         st.caption("🛈 Context: No active NWS/NHC alerts detected — external signal (not part of CI).")
  # ✅ Interpretation banner (safe: interpretation only)
     if tier_code == "exploratory":
-    if alerts_state["hazard_elevated"]:
-        st.warning("CI is Exploratory. External hazard activity is elevated — interpret correlations cautiously.")
-    else:
-        st.info("CI is Exploratory. Use for discovery only — do not treat as operational guidance.")
+        if alerts_state["hazard_elevated"]:
+            st.warning("CI is Exploratory. External hazard activity is elevated — interpret correlations cautiously.")
+        else:
+            st.info("CI is Exploratory. Use for discovery only — do not treat as operational guidance.")
 elif tier_code == "conditional":
     if alerts_state["hazard_elevated"]:
         st.info("CI is Conditional. External hazard activity is elevated — treat CI as supportive context, not a trigger.")
