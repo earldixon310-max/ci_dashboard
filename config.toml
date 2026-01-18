@@ -1,0 +1,7 @@
+[theme]
+base="light"
+primaryColor="#18A7A7"              # teal accent
+backgroundColor="#F2F4F7"           # light gray canvas
+secondaryBackgroundColor="#FFFFFF"  # cards
+textColor="#1E2A32"
+font="sans serif"
