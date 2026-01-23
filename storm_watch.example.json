@@ -1,0 +1,169 @@
+{
+  "schema_version": "storm_watch.v0.1",
+  "generated_at": "2026-01-22T22:00:00-05:00",
+  "target": {
+    "name": "NW Burlington County, NJ",
+    "zone_id": "NJZ019",
+    "timezone": "America/New_York",
+    "latlon_hint": [40.11, -74.78],
+    "notes": "Gradient zone; phase-change sensitivity high."
+  },
+  "event": {
+    "type": "winter_storm",
+    "label": "Storm Watch",
+    "t0": {
+      "label": "Expected onset reference",
+      "iso": "2026-01-24T19:00:00-05:00",
+      "source": "NWS watch window start"
+    },
+    "watch_window": {
+      "start_iso": "2026-01-24T19:00:00-05:00",
+      "end_iso": "2026-01-26T13:00:00-05:00",
+      "source": "NWS winter storm watch/advisory"
+    }
+  },
+  "timeline": {
+    "horizon_hours": 72,
+    "cadence_plan": [
+      { "range": [-72, -48], "updates_per_day": 2 },
+      { "range": [-48, -24], "updates_per_day": 3 },
+      { "range": [-24, 0], "updates_every_hours": 3 }
+    ],
+    "checkpoints_hours": [-72, -48, -36, -24, -18, -12, -6, -3, 0]
+  },
+  "signals": {
+    "temperature_tendency": {
+      "enabled": true,
+      "fields": ["dT_6h_C", "dT_12h_C", "dT_24h_C", "warm_nose_risk"]
+    },
+    "precip_phase_probability": {
+      "enabled": true,
+      "phases": ["snow", "sleet", "fzra", "rain"],
+      "time_blocks": ["pre_onset", "onset", "peak", "late", "post"]
+    },
+    "timing_uncertainty": {
+      "enabled": true,
+      "fields": ["onset_window_h", "peak_window_h", "end_window_h"]
+    }
+  },
+  "triggers": {
+    "phase_bifurcation_spike": {
+      "enabled": true,
+      "rule": {
+        "type": "delta_threshold",
+        "field": "p_mix",
+        "threshold": 0.2,
+        "window_hours": 24
+      }
+    },
+    "timing_window_rewidening": {
+      "enabled": true,
+      "rule": {
+        "type": "rewidening",
+        "fields": ["onset_window_h", "peak_window_h"],
+        "thresholds_h": { "onset_window_h": 3, "peak_window_h": 4 },
+        "within_t_minus_hours": { "peak_window_h": 24 }
+      }
+    },
+    "band_placement_volatility": {
+      "enabled": true,
+      "rule": { "type": "qualitative_flag" }
+    },
+    "accumulation_regime_flip": {
+      "enabled": true,
+      "rule": { "type": "qualitative_flag" }
+    },
+    "post_storm_hazard_amplification": {
+      "enabled": true,
+      "rule": { "type": "qualitative_flag" }
+    }
+  },
+  "updates": [
+    {
+    "timestamp_iso": "2026-01-23T10:00:00-05:00",
+    "t_minus_h": -33,
+    "sources": [
+        { "kind": "nws_afd", "ref": "PHI AFD", "confidence_note": "band placement uncertainty increasing; mix line nudged north" }
+    ],
+    "observations": {
+        "temperature_tendency": {
+        "dT_6h_C": -0.6,
+        "dT_12h_C": -1.4,
+        "dT_24h_C": -2.1,
+        "warm_nose_risk": "elevated"
+        },
+        "precip_phase_probability": {
+        "pre_onset": { "snow": 0.50, "sleet": 0.25, "fzra": 0.10, "rain": 0.15 },
+        "onset":     { "snow": 0.45, "sleet": 0.30, "fzra": 0.10, "rain": 0.15 },
+        "peak":      { "snow": 0.40, "sleet": 0.35, "fzra": 0.10, "rain": 0.15 },
+        "late":      { "snow": 0.35, "sleet": 0.30, "fzra": 0.10, "rain": 0.25 },
+        "post":      { "snow": 0.05, "sleet": 0.05, "fzra": 0.00, "rain": 0.10 }
+        },
+        "timing_uncertainty": {
+        "onset_window_h": 8,
+        "peak_window_h": 13,
+        "end_window_h": 11
+        }
+    },
+    "derived": {
+        "p_mix": 0.45,
+        "confidence_grade": "C",
+        "drop_event": true,
+        "drop_reasons": [
+        "Mix probability increased in peak block",
+        "Peak window widened further"
+        ],
+        "confidence_trend": "up, down, flat"
+
+    },
+    "trigger_status": {
+        "phase_bifurcation_spike": "active",
+        "timing_window_rewidening": "active",
+        "band_placement_volatility": "active",
+        "accumulation_regime_flip": "inactive",
+        "post_storm_hazard_amplification": "emerging"
+    }
+    },
+    {
+        "timestamp_iso": "2026-01-23T16:00:00-05:00",
+        "t_minus_h": -27,
+        "sources": [
+            { "kind": "nws_afd", "ref": "PHI AFD", "confidence_note": "mix line remains uncertain; peak timing spread still elevated" }
+        ],
+        "observations": {
+            "temperature_tendency": {
+            "dT_6h_C": -0.4,
+            "dT_12h_C": -1.0,
+            "dT_24h_C": -1.8,
+            "warm_nose_risk": "elevated"
+            },
+            "precip_phase_probability": {
+            "pre_onset": { "snow": 0.48, "sleet": 0.27, "fzra": 0.10, "rain": 0.15 },
+            "onset":     { "snow": 0.44, "sleet": 0.31, "fzra": 0.10, "rain": 0.15 },
+            "peak":      { "snow": 0.38, "sleet": 0.37, "fzra": 0.10, "rain": 0.15 },
+            "late":      { "snow": 0.34, "sleet": 0.31, "fzra": 0.10, "rain": 0.25 },
+            "post":      { "snow": 0.05, "sleet": 0.05, "fzra": 0.00, "rain": 0.10 }
+            },
+            "timing_uncertainty": {
+            "onset_window_h": 8,
+            "peak_window_h": 12,
+            "end_window_h": 11
+            }
+        },
+        "derived": {
+            "p_mix": 0.47,
+            "confidence_grade": "C",
+            "drop_event": false,
+            "drop_reasons": ["Mix probability remains elevated, but timing windows stabilized slightly"],
+            "confidence_trend": "up, down, flat"
+        },
+        "trigger_status": {
+            "phase_bifurcation_spike": "active",
+            "timing_window_rewidening": "emerging",
+            "band_placement_volatility": "active",
+            "accumulation_regime_flip": "inactive",
+            "post_storm_hazard_amplification": "emerging"
+        }
+    }
+  ]
+}
