@@ -17,6 +17,7 @@ from lib.ci_ui import inject_reference_css, render_tier_status_card
 # ✅ Storm Watch now lives entirely in storm_watch.py
 from storm_watch import load_storm_watch, render_storm_watch
 
+
 inject_reference_css("CI Dashboard")
 
 st.sidebar.title("Viewer Mode")
@@ -33,14 +34,15 @@ STORM_WATCH_EXAMPLE_PATH = ROOT / "storm_watch.example.json"
 # -------------------------
 if mode == "Storm Watch":
     path = STORM_WATCH_PATH if STORM_WATCH_PATH.exists() else STORM_WATCH_EXAMPLE_PATH
-    try:
-        sw = load_storm_watch(path)
-    except Exception as e:
-        st.error(f"Failed to load Storm Watch file ({path.name}): {e}")
-        st.stop()
-
-    render_storm_watch(sw)
+    sw = load_storm_watch(path)
+    render_storm_watch(sw, live_path=STORM_WATCH_PATH)  # pass live_path so simulate saves
     st.stop()
+
+    
+    import datetime as _dt
+
+    st.caption(f"Storm Watch file: {path.resolve()}")
+    st.caption("Last modified: " + _dt.datetime.fromtimestamp(path.stat().st_mtime).isoformat())
 
 # -------------------------
 # CI Report mode begins here
